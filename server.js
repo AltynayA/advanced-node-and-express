@@ -1,5 +1,6 @@
 'use strict';
 require('dotenv').config();
+console.log("Render loaded MONGO_URI:", process.env.MONGO_URI);
 const express = require('express');
 const myDB = require('./connection');
 const fccTesting = require('./freeCodeCamp/fcctesting.js');
@@ -52,4 +53,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log('Listening on port ' + PORT);
 });
+
 
