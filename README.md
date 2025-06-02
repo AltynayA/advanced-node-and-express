@@ -1,6 +1,19 @@
 # Advanced Node and Express
 
-<h2 id="description">freeCodeCamp Quality Assurance course </h2>
-<p> chat application with a sign-in system (Node.js Express.js)</p>
+Solutions from the **Advanced Node and Express** section of the [freeCodeCamp Quality Assurance Certification](https://www.freecodecamp.org/learn/quality-assurance/).
+Building a real-time chat app with authentication using **Node.js**, **Express**, **Passport**, **Pug**, and **Socket.IO**.
 
-This is the boilerplate for the Advanced Node and Express lessons. Instructions for the lessons start at https://www.freecodecamp.org/learn/quality-assurance/advanced-node-and-express/
+## 📚 Topics Covered
+
+- Authentication with Passport.js
+- Password hashing and sessions
+- Pug templates for frontend
+- Real-time communication with Socket.IO
+- Modular project structure
+
+## 🛠️ Tools
+
+- Node.js, Express, MongoDB
+- Passport.js, Pug, Socket.IO
+- dotenv, bcrypt
+
