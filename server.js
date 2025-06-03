@@ -43,10 +43,13 @@ myDB(async client => {
     res.render('profile',{username: req.user.username});
   });
 
-  app.route('/logout').get((req, res) => {
-    req.logout();
-    res.redirect('/');
+  app.route('/logout').get((req, res, next) => {
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      res.redirect('/');
+    });
   });
+
 
   app.use((req, res, next) => {
     res.status(404)
