@@ -8,7 +8,7 @@ const passport = require('passport');
 const {ObjectID } = require('mongodb');
 const app = express();
 const LocalStrategy = require('passport-local');
-const hash = bcrypt.hashSync(req.body.password, 12);
+const bcrypt = require('bcrypt');
 app.set('view engine', 'pug');
 app.set('views', './views/pug');
 
@@ -65,6 +65,7 @@ myDB(async client => {
 
   app.route('/register')
       .post((req, res, next) => {
+            const hash = bcrypt.hashSync(req.body.password, 12);
             myDataBase.findOne({ username: req.body.username }, (err, user) => {
               if (err) {
                 next(err);
