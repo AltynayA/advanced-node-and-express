@@ -25,12 +25,20 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.route('/logout').get((req, res, next) => {
-  req.logout(function(err) {
-    if (err) { return next(err); }
-    res.redirect('/');
-  });
-});
+// app.route('/logout').get((req, res, next) => {
+//   console.log("reached logout");
+//   req.logout(function(err) {
+//     if (err) { return next(err); }
+//     res.redirect('/');
+//   });
+// });
+
+app.route('/logout')
+    .get((req, res) => {
+      console.log("reached logout");
+      req.logout();
+      res.redirect('/');
+    });
 
 app.use((req, res, next) => {
   res.status(404)
