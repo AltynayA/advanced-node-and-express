@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let socket = io();
+  let socket = io('https://advanced-node-and-express-v3nh.onrender.com');
   socket.on('user count', function(data) {
     console.log(data);
   });
