@@ -1,7 +1,11 @@
 $(document).ready(function () {
   let socket = io('https://advanced-node-and-express-v3nh.onrender.com');
-  socket.on('user count', function(data) {
-    console.log(data);
+  socket.on('user', data => {
+    $('#num-users').text(data.currentUsers + ' users online');
+    let message =
+        data.username +
+        (data.connected ? ' has joined the chat.' : ' has left the chat.');
+    $('#messages').append($('<li>').html('<b>' + message + '</b>'));
   });
 
   // Form submittion with new message in field with id 'm'
